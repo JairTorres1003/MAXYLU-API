@@ -1,0 +1,158 @@
+:root {
+    --dominantColor--: rgb(65, 53, 134);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.codeML_Api {
+    background-color: var(--dominantColor--);
+    width: 95%;
+    height: max-content;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid rgb(9, 4, 36);
+    overflow: hidden;
+}
+.codeML_Api::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--dominantColor--);
+    z-index: 99998;
+    position: absolute;
+    border-radius: 10px;
+    right: 1px;
+    bottom: 1px;
+    opacity: 0;
+}
+.codeML_Api::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--dominantColor--);
+    z-index: 99999;
+    position: absolute;
+    border-radius: 0 0 30px 0;
+    border: 1px solid rgb(145, 145, 145);
+    border-style: outset;
+    border-top: none;
+    border-left: none;
+    right: 0px;
+    bottom: 0px;
+}
+pre .str, code .str { color: rgb(110, 216, 110); } /*string*/
+pre .kwd, code .kwd { color: rgb(210, 112, 255); } /*keyword*/
+pre .com, code .com { color: rgb(129, 129, 129); font-style: italic; } /*comment*/
+pre .typ, code .typ { color: rgb(197, 195, 70); } /*type*/
+pre .lit, code .lit { color: rgb(224, 148, 86); } /*literal / number*/
+pre .pun, code .pun { color: rgb(110, 202, 204);  } /*punctuation*/
+pre .pln, code .pln { color: rgb(255, 255, 255); } /*plaintext*/
+
+a {
+    text-decoration: none;
+}
+pre.prettyprint, code.prettyprint {
+    background-color: var(--dominantColor--);
+    border-radius: 10px;
+}
+
+pre.prettyprint {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    max-height: 500px;
+    height: auto;
+    padding: 1em 1em 1em 4em;
+    white-space: pre;
+    overflow: auto;
+}
+pre.prettyprint::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+pre.prettyprint::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+}
+
+pre.prettyprint a, code.prettyprint a {
+    text-decoration:none;
+    
+}
+/* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: rgb(185, 185, 185); } /* IE indents via margin-left */
+ol li.L0,ol li.L1,ol li.L2,ol li.L3,ol li.L4,ol li.L5,ol li.L6,ol li.L7,ol li.L8,ol li.L9 {
+    list-style-type: decimal !important; 
+    background-color: var(--dominantColor--);
+    width: 100%;
+    height: max-content;
+}
+ol li span {
+    position: relative;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -0.21px;
+    width: max-content;
+}
+.c-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: max-content;
+    display: flex;
+    background-color: var(--dominantColor--);
+    z-index: 999;
+    min-width: fit-content;
+}
+.edit {
+    height: 100%;
+    background-color: var(--dominantColor--);
+    border: none;
+    color: inherit;
+    font-size: 1em;
+    letter-spacing: -0.21px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    z-index: 9999;
+    size: 20;
+}
+#copy-code_MLApi {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 20px;
+    max-height: 40px;
+    min-width: 20px;
+    width: 40px;
+    height: auto;
+    font-size: 1.7em;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    opacity: 0;
+    color: var(--dominantColor--);
+    transition: 0.5s;
+}
+.codeML_Api:hover > #copy-code_MLApi {
+    opacity: 1;
+}
+#copy-code_MLApi:hover::before {
+    content: "Copy";
+    font-size: 0.7em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#copy-code_MLApi:hover {
+    width: 85px;
+}
